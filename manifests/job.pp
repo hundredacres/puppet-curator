@@ -19,7 +19,7 @@ define curator::job (
 
   cron { "curator_${name}":
     ensure   => $ensure,
-    command  => "${::curator::command} ${::curator::config_path}/action_${action}.yml> /dev/null 2>&1",
+    command  => "${::curator::command} ${::curator::config_path}/action_${action}.yml> /var/log/curator.log 2>&1",
     hour     => $hour,
     minute   => $minute,
     month    => $month,
